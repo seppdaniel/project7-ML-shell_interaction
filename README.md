@@ -1,4 +1,33 @@
 # README
+
+### Natural Language-Based Shell Command Generation and Execution Python Algorithm
+## Overview
+### This repository houses a Python algorithm that generates and executes shell commands based on user-provided natural language descriptions, leveraging the OpenAI API. The implementation further accommodates Linux commands for seamless execution within a Windows environment.
+
+Features
+The algorithm encompasses the following functionalities:
+
+- Imports requisite libraries, including the OpenAI API, subprocess, and other utilities.
+- Loads a .env file containing the OpenAI API key and mappings of Linux commands to their Windows counterparts.
+- Defines a generate_command(text) function, utilizing the OpenAI API to generate a shell command from a provided natural language description.
+- Defines an execute_command(command) function that adapts Linux commands to function on Windows (if the operating system is Windows) and executes the generated command.
+- The function employs a dictionary named LINUX_TO_WINDOWS, housing mappings of select Linux commands to equivalent Windows commands. It verifies the operating system, then iterates - through the LINUX_TO_WINDOWS dictionary. If the command begins with a Linux command from the dictionary, it substitutes the equivalent Windows command.
+- The approach taken in the execute_command function is more versatile and maintainable. To add additional commands and their Windows equivalencies, one need only update the LINUX_TO_WINDOWS dictionary, as opposed to manually modifying the function.
+- Prompts the user for a natural language description of the desired shell command.
+- Generates the shell command based on the provided description using the generate_command function.
+- Prints the generated command and subsequently executes it using the execute_command function.
+
+Usage
+1. Clone the repository
+2. Install the necessary dependencies (openai, python-dotenv)
+3. Create a .env file with the OpenAI API key and Linux-to-Windows command mappings as required
+4. Execute the Python script and provide the natural language description of the desired shell command
+5. The algorithm will generate and execute the appropriate shell command
+
+
+________________________________________________________
+EM PORRUGUÊS
+
 ### Algoritmo Python para gerar e executar comandos shell baseado em descrições em linguagem natural.
 ### Este repositório contém um algoritmo em Python que gera e executa comandos shell baseados em descrições em linguagem natural fornecidas pelo usuário, usando a API OpenAI. A implementação também adapta comandos Linux para funcionar no ambiente Windows.
 
